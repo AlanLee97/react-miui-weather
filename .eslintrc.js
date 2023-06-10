@@ -15,6 +15,7 @@ module.exports = {
     'react'
   ],
   rules: {
+    'react/no-unknown-property': 1,
     'react/react-in-jsx-scope': 0,
     'space-before-function-paren': 0,
     semi: [2, 'always'],

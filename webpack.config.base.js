@@ -27,8 +27,8 @@ module.exports = {
       {
         test: /.(css|scss)$/i,
         use: [
-          // 'style-loader',
-          MiniCssExtractPlugin.loader,
+          'style-loader',
+          // MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
         ]
@@ -65,9 +65,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './index.html'
     }),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[hash:8].css'
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'css/[name].[hash:8].css'
+    // }),
     new CleanWebpackPlugin()
   ],
   mode: 'development'

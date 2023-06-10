@@ -1,5 +1,9 @@
 import React from 'react';
-import { Hello } from '../components';
+import {
+  Header,
+  MainInfo
+} from '../components';
+import '../assets/style/home-page.scss';
 
 export default class HomePage extends React.Component {
   constructor (props = {}) {
@@ -11,10 +15,9 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div className="page--home">
-        Home Page
-
-        <Hello />
+      <div className="g-page page--home">
+        <Header />
+        <MainInfo />
       </div>
     );
   }

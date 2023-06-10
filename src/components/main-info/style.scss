@@ -1,0 +1,52 @@
+.cpn--main-info {
+  color: #fff;
+  height: 50vh;
+
+  .ml-20 {
+    margin-left: 2rem;
+  }
+
+  .info-wrapper {
+    height: 50vh;
+    flex-direction: column;
+    .temperature {
+      display: flex;
+      position: relative;
+      font-size: 10rem;
+      line-height: .7;
+      // transform: scale(8);
+      font-family: Arial, Helvetica, sans-serif;
+      display: inline-block;
+      .temp-unit {
+        align-self: baseline;
+        position: absolute;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+    .weather-info {
+      margin-top: 2rem;
+      span {
+        font-size: 2.2rem;
+      }
+    }
+    .other-info {
+      display: flex;
+      margin-top: 2rem;
+      .icon-wrapper {
+        display: inline-block;
+        margin-right: .8rem;
+      }
+      .capsule-btn {
+        background-color: #ffffff22;
+        color: #fff;
+        padding: .8rem 1rem;
+        font-size: 1.4rem;
+        border-radius: 999rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
