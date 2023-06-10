@@ -15,6 +15,8 @@ module.exports = {
     'react'
   ],
   rules: {
+    'react/react-in-jsx-scope': 0,
+    'space-before-function-paren': 0,
     semi: [2, 'always'],
     'no-unused-vars': 1,
     indent: [2, 2]
