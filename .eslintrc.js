@@ -20,6 +20,7 @@ module.exports = {
     'space-before-function-paren': 0,
     semi: [2, 'always'],
     'no-unused-vars': 1,
-    indent: [2, 2]
+    indent: [2, 2],
+    'react/prop-types': 0
   }
 };

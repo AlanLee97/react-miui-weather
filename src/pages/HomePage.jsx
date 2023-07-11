@@ -1,7 +1,8 @@
 import React from 'react';
 import {
   Header,
-  MainInfo
+  MainInfo,
+  ThumbDaysInfo
 } from '../components';
 import '../assets/style/home-page.scss';
 
@@ -18,6 +19,7 @@ export default class HomePage extends React.Component {
       <div className="g-page page--home">
         <Header />
         <MainInfo />
+        <ThumbDaysInfo />
       </div>
     );
   }
