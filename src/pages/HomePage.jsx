@@ -3,7 +3,8 @@ import {
   Header,
   MainInfo,
   ThumbDaysInfo,
-  Forecast24Hours
+  Forecast24Hours,
+  OtherInfo
 } from '../components';
 import '../assets/style/home-page.scss';
 
@@ -22,6 +23,7 @@ export default class HomePage extends React.Component {
         <MainInfo />
         <ThumbDaysInfo />
         <Forecast24Hours />
+        <OtherInfo />
       </div>
     );
   }

@@ -1,0 +1,146 @@
+.cpn--other-info {
+  display: flex;
+
+  .other-info-item-left {
+    flex: 1;
+    margin-right: .5rem;
+    margin-left: 2rem;
+  }
+
+  .other-info-item-right {
+    flex: 1;
+    margin-left: .5rem;
+    margin-right: 2rem;
+  }
+
+}
+
+.cpn--wind-info {
+  background-color: var(--module-box-bg-color);
+  border-radius: var(--module-box-radius);
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+  margin-bottom: 1rem;
+
+  .wind-info-item-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 7rem;
+  }
+
+  .wind-info-item-right {
+    flex: 1;
+
+    .direction-circle {
+      height: 7rem;
+      width: 7rem;
+      border-radius: 7rem;
+      border: 1px solid #ffffff88;
+
+      position: relative;
+      span {
+        color: #ffffff88;
+      }
+
+      .dir-east {
+        position: absolute;
+        right: .2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .dir-south {
+        position: absolute;
+        bottom: .2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .dir-west {
+        position: absolute;
+        left: .2rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .dir-north {
+        position: absolute;
+        top: .2rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .icon-long-arrow {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        margin: auto;
+        height: 3rem;
+        opacity: .6;
+      }
+    }
+  }
+}
+
+.cpn--sun-info {
+  background-color: var(--module-box-bg-color);
+  border-radius: var(--module-box-radius);
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+
+  .sun-info-item-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 7rem;
+
+    .sun-time {
+      font-size: 1.6rem;
+    }
+    .sun-desc {
+      font-size: 1.2rem;
+      color: #ffffff88;
+    }
+  }
+
+  .sun-info-item-right {
+    flex: 1;
+  }
+}
+
+.cpn--feeling-info {
+  background-color: var(--module-box-bg-color);
+  border-radius: var(--module-box-radius);
+  padding: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+
+  .feeling-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    
+    .feeling-item-label {
+      font-size: 1.5rem;
+      color: #ffffff88;
+    }
+
+    .feeling-item-value {
+      font-size: 1.8rem;
+      color: #ffffffaa;
+    }
+  }
+}
+

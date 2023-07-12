@@ -37,7 +37,7 @@ function Forecast24HoursItem(props = {}) {
 export default function Forecast24Hours(props = {}) {
   const dataList = data.dataList;
   return (
-    <div className="cpn--forecast-24hours">
+    <section className="cpn--forecast-24hours">
       <div className='module-title'>
         <img className='icon' src={require('../../assets/imgs/icon/icon-clock.svg')} alt="" />
         24小时预报
@@ -48,6 +48,6 @@ export default function Forecast24Hours(props = {}) {
         }
 
       </div>
-    </div>
+    </section>
   );
 }
