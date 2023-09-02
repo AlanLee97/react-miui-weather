@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import { paddingZero } from '../../utils';
+import { numberPaddingZero } from '@alanlee97/utils';
 
 function createData() {
   const arr = [];
@@ -10,7 +10,7 @@ function createData() {
       icon: require('../../assets/imgs/icon/icon-qing.svg'),
       windLevel: '1级',
       airLevel: '优',
-      hour: i === h ? '现在' : `${paddingZero(i)}:00`,
+      hour: i === h ? '现在' : `${numberPaddingZero(i)}:00`,
       temp: '30°'
     });
   }

@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@alanlee97/utils':
+    specifier: 0.0.10
+    version: 0.0.10
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -96,6 +99,10 @@ devDependencies:
     version: 4.15.1(webpack-cli@5.1.4)(webpack@5.86.0)
 
 packages:
+
+  /@alanlee97/utils@0.0.10:
+    resolution: {integrity: sha512-vbaDmnZWKgLYwEXRCWdSwPIX3pUROZhzWimK4p6RfxlPYT1uB/vs7bq4plzakIMoI28uuvcnKbXkBZXaMOK7AA==}
+    dev: false
 
   /@ampproject/remapping@2.2.1:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
