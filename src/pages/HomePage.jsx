@@ -4,8 +4,10 @@ import {
   MainInfo,
   ThumbDaysInfo,
   Forecast24Hours,
-  OtherInfo
+  OtherInfo,
+  ForecastVideo
 } from '../components';
+
 import '../assets/style/home-page.scss';
 
 export default class HomePage extends React.Component {
@@ -24,6 +26,7 @@ export default class HomePage extends React.Component {
         <ThumbDaysInfo />
         <Forecast24Hours />
         <OtherInfo />
+        <ForecastVideo />
       </div>
     );
   }

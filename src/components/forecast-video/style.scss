@@ -1,0 +1,31 @@
+.cpn--forecast-video {
+  border-radius: var(--module-box-radius);
+  background-color: var(--module-box-bg-color);
+  padding: 2rem 0;
+  margin: 2rem;
+  min-height: 180px;
+  position: relative;
+
+  .forecast-title-wrapper {
+    color: #fff;
+    padding: 0 2rem;
+    .forecast {
+      &-title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      &-desc {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .play-icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
+    background-color: #ffffff20;
+  }
+}
+
