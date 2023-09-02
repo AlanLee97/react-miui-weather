@@ -23,7 +23,7 @@ const devConfig = {
       }
     ]
   },
-  devtool: 'eval-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     port: 3000,
     open: true,

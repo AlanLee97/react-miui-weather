@@ -4,6 +4,7 @@ module.exports = {
     es2021: true
   },
   extends: [
+    // 'alanlee',
     'standard',
     'plugin:react/recommended'
   ],
@@ -21,6 +22,7 @@ module.exports = {
     semi: [2, 'always'],
     'no-unused-vars': 1,
     indent: [2, 2],
-    'react/prop-types': 0
+    'react/prop-types': 0,
+    'no-undef': 1
   }
 };
