@@ -1,0 +1,53 @@
+
+.cpn--slide-panel {
+  --current-height: 80vh;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  .slide-panel {
+    width: 100vw;
+    height: 50vh;
+    background-color: #00000020;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top-left-radius: var(--module-box-radius);
+    border-top-right-radius: var(--module-box-radius);
+    // animation: slideInto 0.2s linear;
+    top: 100vh;
+
+    .bar-wrapper {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .bar {
+      width: 60px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 99rem;
+      opacity: .5;
+    }
+  }
+
+  .slide-transition {
+    transition: top 0.2s;
+  }
+
+  @keyframes slideInto {
+    0% {
+      bottom: -50vh;
+    }
+
+    100% {
+      bottom: 0;
+    }
+  }
+
+}

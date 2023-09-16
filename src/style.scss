@@ -44,3 +44,10 @@
   right: 0;
   margin: auto;
 }
+
+.g-module-box {
+  border-radius: var(--module-box-radius);
+  background-color: var(--module-box-bg-color);
+  padding: 2rem 0;
+  margin: 2rem;
+}

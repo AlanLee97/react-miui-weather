@@ -1,0 +1,38 @@
+.cpn--tips-list {
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 !important;
+  .cpn--tips-list-item {
+    flex-direction: column;
+    width: calc(100% / 3);
+    padding: 2rem;
+    border-right: 1px solid #ffffff11;
+    border-bottom: 1px solid #ffffff11;
+
+    &:nth-child(3n) {
+      border-right: none;
+    }
+
+    &:nth-child(4) {
+      border-bottom: none;
+    }
+    &:nth-child(5) {
+      border-bottom: none;
+    }
+    &:nth-child(6) {
+      border-bottom: none;
+    }
+
+
+    .icon-tips {
+      width: 6rem;
+      height: 6rem;
+    }
+
+    .tips-title {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+  }
+}

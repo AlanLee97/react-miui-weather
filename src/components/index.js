@@ -4,4 +4,6 @@ export { default as ThumbDaysInfo } from './thumb-days-info/ThumbDaysInfo';
 export { default as Forecast24Hours } from './forecast-24hours/Forecast24Hours';
 export { default as OtherInfo } from './other-info/OtherInfo';
 export { default as ForecastVideo } from './forecast-video/ForecastVideo';
-export { default as IconWrapper } from './common/icon-wrapper/IconWrapper';
+export { default as TipsList } from './tips-list/TipsList';
+
+export * from './common';
