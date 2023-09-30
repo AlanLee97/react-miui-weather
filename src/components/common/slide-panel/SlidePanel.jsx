@@ -4,7 +4,7 @@ import { MoveInfo } from '@alanlee97/utils';
 import './style.scss';
 
 export default function SlidePanel(props = {}) {
-  const { children, close } = props;
+  const { children, close, bgColor = '' } = props;
   const panel = useRef();
   const moveInfo = useRef();
   useEffect(() => {

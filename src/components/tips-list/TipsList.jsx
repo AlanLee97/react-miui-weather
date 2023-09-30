@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SlidePanel } from '..';
+import TipPanelContent from './TipPanelContent';
 import './style.scss';
 
 function ListItem(props = {}) {
@@ -63,7 +64,13 @@ export default function TipsList(props = {}) {
       }
 
       {
-        showPanel ? <SlidePanel close={() => setShowPanel(false)} /> : null
+        showPanel
+          ? (
+            <SlidePanel close={() => setShowPanel(false)}>
+              <TipPanelContent />
+            </SlidePanel>
+          )
+          : null
       }
 
     </section>

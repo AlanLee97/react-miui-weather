@@ -10,7 +10,8 @@
   .slide-panel {
     width: 100vw;
     height: 50vh;
-    background-color: #00000020;
+    // background-color: #00000020;
+    background-color: #87aaec;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -28,8 +29,8 @@
     }
   
     .bar {
-      width: 60px;
-      height: 8px;
+      width: 48px;
+      height: 6px;
       background-color: #fff;
       border-radius: 99rem;
       opacity: .5;

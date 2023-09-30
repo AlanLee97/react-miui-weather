@@ -1,0 +1,61 @@
+$white-second: #ffffff88;
+$fontsize-14: 1.4rem;
+
+.cpn--tip-panel-content {
+  color: #fff;
+  padding: 20px;
+
+
+  .weather-info {
+    color: $white-second;
+    font-size: $fontsize-14;
+    margin-top: 2rem;
+  }
+
+  .tip-text-box {
+    margin-top: 2rem;
+    .tip-title-text {
+      font-size: 2.6rem;
+    }
+
+    .tip-info-text {
+      font-size: $fontsize-14;
+      margin-top: 1rem;
+    }
+  }
+
+  .tip-item-box-wrapper {
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
+
+}
+
+.cpn--tip-item-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: fit-content;
+
+  .tip-day {
+    font-size: $fontsize-14;
+  }
+  .temp-text {
+    font-size: 1.3rem;
+    color: $white-second;
+  }
+
+  .icon-cloth {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-top: 1.6rem;
+  }
+
+  .tip-title {
+    font-size: $fontsize-14;
+    margin-top: 1rem;
+  }
+}
