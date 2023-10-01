@@ -8,8 +8,10 @@ $fontsize-14: 1.4rem;
 
   .weather-info {
     color: $white-second;
-    font-size: $fontsize-14;
     margin-top: 2rem;
+    span {
+      font-size: $fontsize-14;
+    }
   }
 
   .tip-text-box {

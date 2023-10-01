@@ -24,6 +24,10 @@ export default function SlidePanel(props = {}) {
         panelEl.classList.remove('slide-transition');
       },
       onMove: ({ y, moveY }) => {
+        if (moveY < 0) { // 向上滑动
+          const topPos = Math.floor(window.innerHeight / 2);
+          if (Math.floor(panelEl.getBoundingClientRect().top) === topPos) return;
+        }
         if (y >= moveInfo.current.floor) {
           onClickBlank();
         }
