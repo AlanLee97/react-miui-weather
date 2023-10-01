@@ -32,7 +32,8 @@ export default function SlidePanel(props = {}) {
           panelEl.style.top = `${y}px`;
         }
       },
-      onEnd: ({ y }) => {
+      onEnd: ({ y, moveY }) => {
+        if (Math.abs(moveY) <= 2) return;
         if (y + (window.innerHeight * 0.25) > window.innerHeight) {
           hide();
           onClickBlank();
@@ -70,7 +71,9 @@ export default function SlidePanel(props = {}) {
     <section className="cpn--slide-panel" onClick={onClickBlank}>
       <div className='slide-panel' ref={panel} onClick={stopPropagation} onTransitionEnd={onTransitionEnd}>
         <div className="bar-wrapper"><span className="bar"></span></div>
-        {children}
+        <div className='slide-panel-content'>
+          {children}
+        </div>
       </div>
 
     </section>
