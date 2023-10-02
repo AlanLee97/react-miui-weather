@@ -5,3 +5,4 @@ export { default as Forecast24Hours } from './forecast-24hours/Forecast24Hours';
 export { default as OtherInfo } from './other-info/OtherInfo';
 export { default as ForecastVideo } from './forecast-video/ForecastVideo';
 export { default as TipsList } from './tips-list/TipsList';
+export { default as FooterText } from './footer-text/FooterText';
