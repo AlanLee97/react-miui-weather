@@ -4,7 +4,7 @@ import './style.scss';
 const data = {
   dataList: [
     {
-      icon: require('../../assets/imgs/icon/icon-qing.svg'),
+      icon: require('../../../assets/imgs/icon/icon-qing.svg'),
       day: '今天',
       weather: '晴',
       airLevel: '优',
@@ -12,7 +12,7 @@ const data = {
       minTemp: '25'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-duoyun.svg'),
+      icon: require('../../../assets/imgs/icon/icon-duoyun.svg'),
       day: '明天',
       weather: '多云',
       airLevel: '良',
@@ -20,7 +20,7 @@ const data = {
       minTemp: '25'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-yin.svg'),
+      icon: require('../../../assets/imgs/icon/icon-yin.svg'),
       day: '周一',
       weather: '阴',
       airLevel: '优',

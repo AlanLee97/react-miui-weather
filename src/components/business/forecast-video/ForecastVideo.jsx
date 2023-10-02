@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconWrapper } from '../../components';
+import { IconWrapper } from '../../../components';
 import './style.scss';
 
 export default function ForecastVideo(props = {}) {

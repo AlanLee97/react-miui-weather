@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SlidePanel } from '..';
+import { SlidePanel } from '../../common';
 import TipPanelContent from './TipPanelContent';
 import './style.scss';
 
@@ -16,27 +16,27 @@ function ListItem(props = {}) {
 const getData = () => {
   return [
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     },
     {
-      icon: require('../../assets/imgs/icon/icon-tips-cloth.svg'),
+      icon: require('../../../assets/imgs/icon/icon-tips-cloth.svg'),
       title: '适宜衬衫'
     }
   ];

@@ -6,7 +6,7 @@ function TipItemBox(props = {}) {
     <section className="cpn--tip-item-box">
       <div className='tip-day'>明天</div>
       <div className='temp-text'>31°/25°</div>
-      <img className='icon-cloth' src={require('../../assets/imgs/icon/icon-tips-cloth.svg')} alt="" />
+      <img className='icon-cloth' src={require('../../../assets/imgs/icon/icon-tips-cloth.svg')} alt="" />
       <div className='tip-title'>适宜短袖</div>
     </section>
   );

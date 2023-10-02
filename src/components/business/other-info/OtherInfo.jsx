@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import { paddingZero } from '../../utils';
+import { paddingZero } from '../../../utils';
 
 function WindInfo(props = {}) {
   return (
@@ -15,7 +15,7 @@ function WindInfo(props = {}) {
           <span className='dir-south'>南</span>
           <span className='dir-west'>西</span>
           <span className='dir-north'>北</span>
-          <img className='icon-long-arrow' src={require('../../assets/imgs/icon/icon-long-arrow.svg')} alt="" />
+          <img className='icon-long-arrow' src={require('../../../assets/imgs/icon/icon-long-arrow.svg')} alt="" />
         </div>
       </div>
     </section>

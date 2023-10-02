@@ -7,7 +7,7 @@ function createData() {
   const h = new Date().getHours();
   for (let i = 0; i < 24; i++) {
     arr.push({
-      icon: require('../../assets/imgs/icon/icon-qing.svg'),
+      icon: require('../../../assets/imgs/icon/icon-qing.svg'),
       windLevel: '1级',
       airLevel: '优',
       hour: i === h ? '现在' : `${numberPaddingZero(i)}:00`,
@@ -39,7 +39,7 @@ export default function Forecast24Hours(props = {}) {
   return (
     <section className="cpn--forecast-24hours">
       <div className='module-title'>
-        <img className='icon' src={require('../../assets/imgs/icon/icon-clock.svg')} alt="" />
+        <img className='icon' src={require('../../../assets/imgs/icon/icon-clock.svg')} alt="" />
         24小时预报
       </div>
       <div className='item-wrapper'>
