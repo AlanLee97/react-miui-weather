@@ -1,0 +1,59 @@
+.cpn--weather-bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  background-color: cornflowerblue;
+  top: 0;
+  left: 0;
+
+  .weather-bg-wrapper {
+
+    .img-cloud-wrapper {
+      transition: all 100ms;
+    }
+    .img-cloud {
+      margin-top: 20vh;
+      transform: translate(-100%, 0);
+      animation: cloudFlow 60s linear infinite alternate;
+    }
+
+  }
+
+
+  @keyframes cloudFlow {
+    0% {
+      transform: translate(-50%, 0);
+    }
+    10% {
+      transform: translate(-40%, -20px);
+    }
+    20% {
+      transform: translate(-30%, 20px);
+    }
+    30% {
+      transform: translate(-20%, -20px);
+    }
+    40% {
+      transform: translate(-10%, 20px);
+    }
+    50% {
+      transform: translate(0%, -20px);
+    }
+    60% {
+      transform: translate(10%, 20px);
+    }
+    70% {
+      transform: translate(20%, -20px);
+    }
+    80% {
+      transform: translate(30%, 20px);
+    }
+    90% {
+      transform: translate(40%, -20px);
+    }
+    100% {
+      transform: translate(50%, 0);
+    }
+  }
+}

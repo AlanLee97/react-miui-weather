@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
+import AppContext from '../../../context/AppContext';
 import './style.scss';
 
 function IconAdd() {
@@ -14,19 +15,37 @@ function IconMenu() {
 }
 
 export default function Header(props = {}) {
+  const appContext = useContext(AppContext);
+
+  const headerBgRef = useRef();
+
+  useEffect(() => {
+    const { scrollPercent } = appContext.scrollInfo || {};
+    if (headerBgRef.current) {
+      headerBgRef.current.style.backgroundColor = 'cornflowerblue';
+      let opacity = (0.05 * scrollPercent);
+      if (opacity < 0) opacity = 0;
+      if (opacity > 1) opacity = 1;
+      headerBgRef.current.style.opacity = opacity;
+    }
+  }, [appContext]);
+
   return (
     <section className="cpn--header">
-      <div className='header-row'>
-        <div className='header-item left'><IconAdd /></div>
-        <div className='header-item center'>
-          <div className='title'>宝安区 银田路</div>
-          <div className='dot-row g-center-vh'>
-            <span className='dot'></span>
-            <span className='dot'></span>
-            <span className='dot'></span>
+      <div className='header-content'>
+        <div className='header-bg' ref={headerBgRef}></div>
+        <div className='header-row'>
+          <div className='header-item left'><IconAdd /></div>
+          <div className='header-item center'>
+            <div className='title'>宝安区 银田路</div>
+            <div className='dot-row g-center-vh'>
+              <span className='dot'></span>
+              <span className='dot'></span>
+              <span className='dot'></span>
+            </div>
           </div>
+          <div className='header-item right'><IconMenu /></div>
         </div>
-        <div className='header-item right'><IconMenu /></div>
       </div>
     </section>
   );

@@ -7,7 +7,8 @@ import {
   OtherInfo,
   ForecastVideo,
   TipsList,
-  FooterText
+  FooterText,
+  WeatherBg
 } from '../components';
 
 import '../assets/style/home-page.scss';
@@ -20,9 +21,16 @@ export default class HomePage extends React.Component {
     };
   }
 
+  onScroll = (e) => {
+    if (this.props.onScroll && typeof this.props.onScroll === 'function') {
+      this.props.onScroll(e);
+    }
+  };
+
   render() {
     return (
-      <div className="g-page page--home">
+      <div className="g-page page--home" id='home' onScroll={this.onScroll}>
+        <WeatherBg />
         <Header />
         <MainInfo />
         <ThumbDaysInfo />
