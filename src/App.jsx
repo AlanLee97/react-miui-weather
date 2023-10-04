@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MoveInfo } from '@alanlee97/utils';
-import AppContext from './context/AppContext';
 import { ScrollInfo } from './utils';
+import { BasePage } from './components';
+import AppContext from './context/AppContext';
 import './style.scss';
 
 export function App (props = {}) {
@@ -36,9 +37,19 @@ export function App (props = {}) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
+  const register = useCallback(() => {
+    // 定义全局函数
     window.$register('goPage', navigate);
+    window.$register('goBack', () => navigate('..', { relative: 'path' }));
 
+    // 定义全局组件
+    window.$register('components', {
+      BasePage
+    });
+  });
+  register();
+
+  useEffect(() => {
     const scrollInfo = new ScrollInfo({
       target: document.getElementById('home'),
       onScroll

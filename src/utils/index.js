@@ -56,3 +56,20 @@ export class ScrollInfo {
     this.target.removeEventListener('scroll', this.onScroll);
   };
 }
+
+/**
+ * 转成烤串字符串
+ * @param {*} string
+ */
+export function toKebabString(str = '') {
+  const testA2Z = (s = '') => /[A-Z]/.test(s);
+  let res = '';
+  str.split('').forEach((s = '', i) => {
+    if (testA2Z(s)) {
+      res += `${i === 0 ? '' : str[i - 1] === '-' ? '' : '-'}${s.toLowerCase()}`;
+    } else {
+      res += s;
+    }
+  });
+  return res;
+}

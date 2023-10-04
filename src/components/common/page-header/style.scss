@@ -1,0 +1,24 @@
+.cpn--page-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+
+  .page-header-item {
+    flex: 1;
+  }
+
+  .page-header-left {
+    padding-left: 2rem;
+  }
+
+  .page-header-center {
+    flex: 2;
+  }
+
+  .icon-back {
+    transform: rotate(90deg);
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
