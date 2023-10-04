@@ -26,11 +26,11 @@ export default function MainInfo(props = {}) {
           <span>31°/25°</span>
         </div>
         <div className='other-info'>
-          <div className='capsule-btn'>
+          <div className='capsule-btn' onClick={() => window.$goPage('/aqi')}>
             <span className='icon-wrapper'><IconLeaf /></span>
             空气优19
           </div>
-          <div className='capsule-btn ml-20'>
+          <div className='capsule-btn ml-20' onClick={() => window.$goPage('/forcast')}>
             <span className='icon-wrapper'><IconWaterDrop /></span>
             2小时内无降雨
           </div>

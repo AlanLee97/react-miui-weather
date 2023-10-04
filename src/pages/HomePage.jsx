@@ -29,7 +29,7 @@ export default class HomePage extends React.Component {
 
   render() {
     return (
-      <div className="g-page page--home" id='home' onScroll={this.onScroll}>
+      <section className="g-page page--home" id='home' onScroll={this.onScroll}>
         <WeatherBg />
         <Header />
         <MainInfo />
@@ -39,7 +39,7 @@ export default class HomePage extends React.Component {
         <ForecastVideo />
         <TipsList />
         <FooterText />
-      </div>
+      </section>
     );
   }
 }

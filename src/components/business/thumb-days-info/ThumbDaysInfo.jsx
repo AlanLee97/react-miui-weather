@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import { useNavigate } from 'react-router-dom';
 
 const data = {
   dataList: [
@@ -49,12 +50,16 @@ function ThumbDaysInfoItem(props = {}) {
 
 export default function ThumbDaysInfo(props = {}) {
   const dataList = data.dataList;
+  const navigate = useNavigate();
+  const goPage = (path) => {
+    navigate(path);
+  };
   return (
     <div className="cpn--thumb-days-info">
       {
         dataList.map((data, index) => <ThumbDaysInfoItem data={data} key={ 'ThumbDaysInfoItem_' + index} />)
       }
-      <div className='btn-recent-info g-center-vh'>查看近15日天气</div>
+      <div className='btn-recent-info g-center-vh' onClick={() => goPage('/15days-trend')}>查看近15日天气</div>
     </div>
   );
 }

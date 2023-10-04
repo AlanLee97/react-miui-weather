@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { MoveInfo } from '@alanlee97/utils';
-import HomePage from './pages/HomePage';
 import AppContext from './context/AppContext';
 import { ScrollInfo } from './utils';
 import './style.scss';
@@ -8,7 +8,10 @@ import './style.scss';
 export function App (props = {}) {
   const [scrollInfo, setScrollInfo] = useState({});
   const [moveInfo, setMoveInfo] = useState({});
+
+  const location = useLocation();
   const isScrollingToBottom = useRef(false);
+
   const onScroll = e => {
     const { scrollY, scrollHeight, atTop, atBottom, scrollPercent, event } = e;
     setScrollInfo({
@@ -31,7 +34,11 @@ export function App (props = {}) {
     }
   };
 
+  const navigate = useNavigate();
+
   useEffect(() => {
+    window.$register('goPage', navigate);
+
     const scrollInfo = new ScrollInfo({
       target: document.getElementById('home'),
       onScroll
@@ -44,12 +51,12 @@ export function App (props = {}) {
       scrollInfo && scrollInfo.destroy();
       moveInfo && moveInfo.destroy();
     };
-  }, []);
+  }, [location]);
 
   return (
     <section className="cpn--app" onTouchEnd={onTouchEnd}>
       <AppContext.Provider value={{ scrollInfo, moveInfo }}>
-        <HomePage />
+        {props.children}
       </AppContext.Provider>
     </section>
   );
