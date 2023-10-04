@@ -1,9 +1,10 @@
 :root {
-  --status-height: 40px;
+  --statusbar-height: 40px;
   --module-box-bg-color: #00000005;
   --module-box-radius: 2rem;
   --box-bg-white-opacity-1: #ffffff10;
   --color-white-opacity-second: #ffffff88;
+  --primary-color: rgb(13, 132, 255);
 }
 
 * {
@@ -18,7 +19,7 @@
   width: 100vw;
   height: 100vh;
   overflow: scroll;
-  padding-top: var(--status-height);
+  padding-top: var(--statusbar-height);
 }
 
 .g-center, .g-center-vh {
@@ -51,4 +52,8 @@
   background-color: var(--module-box-bg-color);
   padding: 2rem 0;
   margin: 2rem;
+}
+
+.g-undisplay {
+  display: none;
 }

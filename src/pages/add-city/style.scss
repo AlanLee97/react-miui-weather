@@ -1,6 +1,8 @@
 .page--add-city {
+  // position: relative;
   width: 100%;
   .cpn--search-bar {
+    top: 35vh;
     .search-box {
       height: 4.8rem;
       width: calc(100% - 4rem);
@@ -39,7 +41,33 @@
         outline: none;
         padding: 0 1.6rem;
         padding-left: 4.8rem;
+        flex: 1;
       }
+    }
+  }
+
+  .input-mode {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: calc(var(--statusbar-height) + 6rem);
+    width: 100%;
+    background-color: #fff;
+    padding-top: var(--statusbar-height);
+    display: flex;
+
+    transition: all 260ms;
+
+    .btn-cancel {
+      color: var(--primary-color);
+      font-size: 1.6rem;
+      height: 4.8rem;
+      width: 4.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 2rem;
     }
   }
 
@@ -97,6 +125,50 @@
 
       .img-cloud {
         margin-top: 0;
+      }
+    }
+  }
+
+  .cpn--search-city-panel {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    height: calc(100vh - calc(var(--statusbar-height) + 6rem));
+    width: 100%;
+    background-color: #fff;
+    top: calc(calc(var(--statusbar-height) + 6rem));
+
+    .city-panel-title {
+      padding: 0 2rem;
+      margin: 1.6rem 0;
+      color: #bbbbbbaa;
+    }
+
+    .hot-citys {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 2rem;
+      padding-bottom: 2rem;
+
+      .city-box {
+        width: calc((100% - 2rem) / 3);
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999rem;
+        background-color: #eeeeee55;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+      }
+
+      .active-city {
+        color: var(--primary-color);
       }
     }
   }
