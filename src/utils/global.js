@@ -1,6 +1,9 @@
-import { className } from '.';
+import { className, nextTick } from '.';
 
-const registerList = [className];
+const registerList = [
+  className,
+  nextTick
+];
 
 registerList.forEach(fn => {
   window[`$${fn.name}`] = fn;

@@ -73,3 +73,9 @@ export function toKebabString(str = '') {
   });
   return res;
 }
+
+export function nextTick(cb = () => {}) {
+  return Promise.resolve().then(() => {
+    cb();
+  });
+}

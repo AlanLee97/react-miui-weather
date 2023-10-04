@@ -1,0 +1,70 @@
+.page--add-city {
+  width: 100%;
+  .cpn--search-bar {
+    .search-box {
+      height: 4.8rem;
+      width: calc(100% - 4rem);
+      border-radius: 4.8rem;
+      background-color: #eeeeee55;
+      display: flex;
+      align-items: center;
+      margin: 0 2rem;
+      padding: 0 1.6rem;
+      position: relative;
+      font-size: 1.4rem;
+
+      .fake-placeholder {
+        color: #bbbbbbaa;
+        font-size: 1.4rem;
+        padding-left: 1.6rem;
+        width: 100%;
+      }
+
+      .icon-search {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .input-box {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.4rem;
+        left: 0;
+        top: 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        padding: 0 1.6rem;
+        padding-left: 4.8rem;
+      }
+    }
+  }
+
+  .city-list {
+    padding: 0 1rem;
+    margin-top: 1.6rem;
+
+    .cpn--city-thumb + .cpn--city-thumb {
+      margin-top: 1rem;
+    }
+  }
+
+  .cpn--city-thumb {
+    border-radius: var(--module-box-radius);
+    height: 10rem;
+    width: 100%;
+    background-color: cornflowerblue;
+
+    .display-info {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      align-items: center;
+      padding: 0 1.6rem;
+      color: #fff;
+    }
+  }
+}
