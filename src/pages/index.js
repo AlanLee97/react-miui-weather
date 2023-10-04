@@ -1,6 +1,6 @@
-export { default as HomePage } from './HomePage';
-export { default as AddCityPage } from './AddCityPage';
-export { default as AQIPage } from './AQIPage';
-export { default as ForcastPage } from './ForcastPage';
-export { default as Recent15DaysTrend } from './Recent15DaysTrend';
-export { default as SettingPage } from './SettingPage';
+export { default as HomePage } from './home/HomePage';
+export { default as AddCityPage } from './add-city/AddCityPage';
+export { default as AQIPage } from './aqi/AQIPage';
+export { default as ForcastPage } from './forcast/ForcastPage';
+export { default as Recent15DaysTrend } from './recent-15-days-trend/Recent15DaysTrend';
+export { default as SettingPage } from './setting/SettingPage';

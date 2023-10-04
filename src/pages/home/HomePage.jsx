@@ -9,9 +9,9 @@ import {
   TipsList,
   FooterText,
   WeatherBg
-} from '../components';
+} from '../../components';
 
-import '../assets/style/home-page.scss';
+import './style.scss';
 
 export default class HomePage extends React.Component {
   constructor (props = {}) {
