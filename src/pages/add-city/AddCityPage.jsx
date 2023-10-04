@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { WeatherBg } from '../../components';
 import './style.scss';
 
 function SearchBar(props = {}) {
@@ -38,19 +39,20 @@ function CityThumb(props = {}) {
   const { data = {} } = props || {};
   return (
     <section className="cpn--city-thumb">
+      <WeatherBg portal={false} />
       <div className='display-info'>
         <div>
-          <div>{data.name || data.address}</div>
-          <div>
-            <span>空气{data.air}</span>
+          <div className='city-name'>{data.name || data.address}</div>
+          <div className='air-text-wrapper'>
+            <span className='aqi-text'>空气{data.air}</span>
             <span>
               <span>{data.maxTemp}°</span>
-              /
+              <span className='temp-split'>/</span>
               <span>{data.minTemp}°</span>
             </span>
           </div>
         </div>
-        <div>{data.temp}°</div>
+        <div className='temp-text'>{data.temp}°</div>
       </div>
     </section>
   );
@@ -65,7 +67,7 @@ export default function AddCityPage(props = {}) {
       maxTemp: 31,
       minTemp: 25,
       address: '',
-      air: ''
+      air: '优'
     },
     {
       name: '南山区',
@@ -73,7 +75,7 @@ export default function AddCityPage(props = {}) {
       maxTemp: 31,
       minTemp: 25,
       address: '',
-      air: ''
+      air: '优'
     }
   ]);
   return (

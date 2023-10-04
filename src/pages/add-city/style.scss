@@ -56,7 +56,9 @@
     border-radius: var(--module-box-radius);
     height: 10rem;
     width: 100%;
-    background-color: cornflowerblue;
+    position: relative;
+    overflow: hidden;
+    background-color: #00000010;
 
     .display-info {
       display: flex;
@@ -64,7 +66,38 @@
       height: 100%;
       align-items: center;
       padding: 0 1.6rem;
-      color: #fff;
+      color: #ffffff;
+
+      .city-name {
+        font-size: 1.8rem;
+      }
+
+      .air-text-wrapper {
+        margin-top: .5rem;
+        * {
+          font-size: 1.4rem;
+        }
+        .temp-split {
+          margin: 0 .6rem;
+        }
+        .aqi-text {
+          margin-right: 1.2rem;
+        }
+      }
+
+      .temp-text {
+        font-size: 3.2rem;
+      }
+    }
+
+    .cpn--weather-bg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+
+      .img-cloud {
+        margin-top: 0;
+      }
     }
   }
 }

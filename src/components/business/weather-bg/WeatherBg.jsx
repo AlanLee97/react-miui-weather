@@ -6,6 +6,7 @@ import { createPortal } from 'react-dom';
 export default function WeatherBg(props = {}) {
   const appContext = useContext(AppContext);
   const cloudWrapperRef = useRef();
+  const { portal = true } = props || {};
 
   useEffect(() => {
     if (appContext.scrollInfo.scrollPercent < 20) {
@@ -20,7 +21,7 @@ export default function WeatherBg(props = {}) {
     }
   }, [appContext]);
 
-  return createPortal((
+  const dom = (
     <section className="cpn--weather-bg">
       <div className='weather-bg-wrapper'>
         <div className='img-cloud-wrapper' ref={cloudWrapperRef}>
@@ -28,5 +29,7 @@ export default function WeatherBg(props = {}) {
         </div>
       </div>
     </section>
-  ), document.body);
+  );
+
+  return portal ? createPortal(dom, document.body) : dom;
 }
