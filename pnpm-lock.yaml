@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@alanlee97/utils':
-    specifier: 0.0.10-dev.3
-    version: 0.0.10-dev.3
+    specifier: 0.0.10-dev.4
+    version: 0.0.10-dev.4
   core-js:
     specifier: ^3.32.1
     version: 3.32.1
@@ -111,8 +111,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /@alanlee97/utils@0.0.10-dev.3:
-    resolution: {integrity: sha512-NslUmdFt693TLSYics53BGzJHrMise76wtRn4ztpWhN1YNyKCDM0ciKfN7gqqiYnSctUFFq+7L1WoOgho/zSCg==}
+  /@alanlee97/utils@0.0.10-dev.4:
+    resolution: {integrity: sha512-FeMNKpD6XQR65sCG2VYC/wPmGkwYnCkyzqBReMnreyDNjXEwes/DltiKPfjLSDIQVMQBAR7oi+PuNgyYIFHu+g==}
     dev: false
 
   /@ampproject/remapping@2.2.1:

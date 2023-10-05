@@ -47,7 +47,7 @@
     "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
-    "@alanlee97/utils": "0.0.10-dev.3",
+    "@alanlee97/utils": "0.0.10-dev.4",
     "core-js": "^3.32.1",
     "eslint-config-alanlee": "^0.0.1",
     "react": "^18.2.0",

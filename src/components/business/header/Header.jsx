@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import AppContext from '../../../context/AppContext';
 import './style.scss';
-import { useNavigate } from 'react-router-dom';
 
 function IconAdd() {
   return (
@@ -18,7 +17,6 @@ function IconMenu() {
 export default function Header(props = {}) {
   const appContext = useContext(AppContext);
   const headerBgRef = useRef();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const { scrollPercent } = appContext.scrollInfo || {};
@@ -31,17 +29,13 @@ export default function Header(props = {}) {
     }
   }, [appContext]);
 
-  const toPage = (path = '/') => {
-    navigate(path);
-  };
-
   return (
     <section className="cpn--header">
       <div className='header-content'>
         <div className='header-bg' ref={headerBgRef}></div>
         <div className='header-row'>
           <div className='header-item left'>
-            <span onClick={() => toPage('/add-city')}>
+            <span onClick={() => window.$toPage('/add-city')}>
               <IconAdd />
             </span>
           </div>

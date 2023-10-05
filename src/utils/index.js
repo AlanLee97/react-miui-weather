@@ -12,6 +12,9 @@ export function className(...args) {
   return res.trim();
 }
 
+/**
+ * 滚动相关信息
+ */
 export class ScrollInfo {
   constructor(options = {}) {
     this.target = options.target || window;
@@ -22,6 +25,8 @@ export class ScrollInfo {
     this.scrollPercent = 0;
     this.atTop = true;
     this.atBottom = false;
+    this.isValidTarget = this.target && (this.target instanceof HTMLElement || this.target === window);
+    this.instance = this;
 
     this.init();
   }
@@ -30,26 +35,40 @@ export class ScrollInfo {
     this.target.addEventListener('scroll', this.onScroll);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   scrollCallback = () => {};
 
   onScroll = (e) => {
-    // console.log(e);
     const { scrollTop, scrollHeight } = e.target || {};
     this.scrollHeight = scrollHeight;
     this.scrollY = scrollTop;
     const original = scrollTop / scrollHeight;
+    // eslint-disable-next-line no-mixed-operators
     this.scrollPercent = Math.floor((original - 0) / (0.54 - 0) * 100);
     this.atTop = scrollTop === 0;
     this.atBottom = Math.floor(this.target.clientHeight + scrollTop) === scrollHeight;
-    this.scrollCallback({
-      event: e,
-      scrollX: this.scrollX,
-      scrollY: this.scrollY,
-      scrollHeight: this.scrollHeight,
-      scrollPercent: this.scrollPercent,
-      atTop: this.atTop,
-      atBottom: this.atBottom
-    });
+    this.event = e;
+    this.scrollCallback(this);
+  };
+
+  scrollToTop = () => {
+    if (this.isValidTarget) {
+      this.target.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  scrollToBottom = () => {
+    if (this.isValidTarget) {
+      this.target.scrollTo({
+        top: this.scrollHeight,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
   };
 
   destroy = () => {
