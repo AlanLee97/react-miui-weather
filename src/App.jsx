@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { MoveInfo, ScrollInfo } from '@alanlee97/utils';
-// import { ScrollInfo } from './utils';
 import { BasePage } from './components';
 import AppContext from './context/AppContext';
 import './style.scss';

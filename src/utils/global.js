@@ -1,12 +1,18 @@
-import { className, nextTick } from '.';
+import { className, nextTick } from '@alanlee97/utils';
 
 const registerList = [
-  className,
-  nextTick
+  {
+    name: 'className',
+    fn: className
+  },
+  {
+    name: 'nextTick',
+    fn: nextTick
+  }
 ];
 
 registerList.forEach(fn => {
-  window[`$${fn.name}`] = fn;
+  window[`$${fn.name}`] = fn.fn;
 });
 
 window.$register = function(name, fn = () => {}) {
