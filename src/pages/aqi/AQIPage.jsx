@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Canvas, Chart, Interval, Tooltip, Axis, ScrollBar, Line, Point } from '@antv/f2';
 import './style.scss';
 
 function CustomTitle(props = {}) {
@@ -96,7 +97,8 @@ function Chart24hAQIForcast(props = {}) {
         </div>
       </div>
       <div className='chart-wrapper'>
-        图表区域
+        <DrawChartTime visible={viewType === 1} />
+        <DrawChartLine visible={viewType === 2} />
       </div>
     </section>
   );
@@ -108,7 +110,8 @@ function NearbyAQI(props = {}) {
       <div className='nearby-aqi-title'>附近空气质量</div>
       <div className='map-wrapper'>
         <div className='map-view'>
-        地图
+          {/* 暂时使用图片代替地图，地图不是本项目的重点，后续有兴趣再继续开发 */}
+          <img className='img-map' src={require('../../assets/imgs/aqi-map.png')} alt="" />
         </div>
       </div>
       <div className='nearby-checkpoint-list'>
@@ -135,6 +138,206 @@ function NearbyAQI(props = {}) {
           </span>
         </div>
       </div>
+    </section>
+  );
+}
+
+function DrawChartTime(props = {}) {
+  const { visible = true } = props || {};
+  useEffect(() => {
+    draw();
+  }, []);
+
+  function draw() {
+    const data = [
+      {
+        hour: '10:00',
+        value: 38
+      },
+      {
+        hour: '11:00',
+        value: 12
+      },
+      {
+        hour: '12:00',
+        value: 64
+      },
+      {
+        hour: '13:00',
+        value: 16
+      },
+      {
+        hour: '14:00',
+        value: 72
+      },
+      {
+        hour: '15:00',
+        value: 64
+      },
+      {
+        hour: '16:00',
+        value: 66
+      },
+      {
+        hour: '17:00',
+        value: 38
+      },
+      {
+        hour: '18:00',
+        value: 12
+      },
+      {
+        hour: '19:00',
+        value: 64
+      },
+      {
+        hour: '20:00',
+        value: 16
+      },
+      {
+        hour: '21:00',
+        value: 72
+      },
+      {
+        hour: '22:00',
+        value: 64
+      },
+      {
+        hour: '23:00',
+        value: 66
+      }
+    ];
+
+    const context = document.getElementById('container-time').getContext('2d');
+    const width = window.innerWidth - 40;
+    const { props } = (
+      <Canvas width={width} height={180} context={context} pixelRatio={window.devicePixelRatio}>
+        <Chart
+          data={data}
+          scale={{
+            value: {
+              tickCount: 5
+            }
+          }}
+        >
+          <Axis field="hour" />
+          <Interval style={{
+            fill: '#5adda6',
+            shadowColor: '#5adda6',
+            shadowBlur: 2
+          }} x="hour" y="value" />
+          <ScrollBar visible={false} mode="x" range={[0, 0.4]} />
+          <Tooltip />
+        </Chart>
+      </Canvas>
+    );
+
+    const chart = new Canvas(props);
+    chart.render();
+  }
+
+  const className = [
+    'cpn--draw-chart',
+    visible ? '' : 'g-undisplay'
+  ];
+
+  return (
+    <section className={window.$className(className)}>
+      <canvas id='container-time'></canvas>
+    </section>
+  );
+}
+
+function DrawChartLine(props = {}) {
+  const { visible = true } = props || {};
+  useEffect(() => {
+    draw();
+  }, []);
+
+  function draw() {
+    const data = [
+      {
+        date: '10月5日',
+        value: 20
+      },
+      {
+        date: '10月6日',
+        value: 22
+      },
+      {
+        date: '10月7日',
+        value: 21
+      },
+      {
+        date: '10月8日',
+        value: 23
+      },
+      {
+        date: '10月9日',
+        value: 20
+      },
+      {
+        date: '10月10日',
+        value: 22
+      },
+      {
+        date: '10月11日',
+        value: 22
+      },
+      {
+        date: '10月12日',
+        value: 23
+      },
+      {
+        date: '10月13日',
+        value: 22
+      },
+      {
+        date: '10月14日',
+        value: 22
+      },
+      {
+        date: '10月15日',
+        value: 21
+      },
+      {
+        date: '10月16日',
+        value: 23
+      }
+    ];
+
+    const context = document.getElementById('container-line').getContext('2d');
+    const width = window.innerWidth - 40;
+    const { props } = (
+      <Canvas width={width} height={180} context={context} pixelRatio={window.devicePixelRatio}>
+        <Chart
+          data={data}
+        >
+          <Axis field="date" />
+          <Line x="date" y="value" style={{
+            stroke: '#eeeeee'
+          }} />
+          <Point x="date" y="value" style={{
+            fill: '#5adda6'
+          }} />
+          <ScrollBar visible={false} mode="x" range={[0, 0.4]} />
+          <Tooltip />
+        </Chart>
+      </Canvas>
+    );
+
+    const chart = new Canvas(props);
+    chart.render();
+  }
+
+  const className = [
+    'cpn--draw-chart',
+    visible ? '' : 'g-undisplay'
+  ];
+
+  return (
+    <section className={window.$className(className)}>
+      <canvas id='container-line'></canvas>
     </section>
   );
 }
