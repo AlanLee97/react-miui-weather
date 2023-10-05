@@ -35,7 +35,7 @@ export default function Header(props = {}) {
         <div className='header-bg' ref={headerBgRef}></div>
         <div className='header-row'>
           <div className='header-item left'>
-            <span onClick={() => window.$toPage('/add-city')}>
+            <span onClick={() => window.$goPage('/add-city')}>
               <IconAdd />
             </span>
           </div>
