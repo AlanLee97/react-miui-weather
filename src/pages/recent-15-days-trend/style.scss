@@ -1,0 +1,56 @@
+.page--recent15-days-trend {
+  .day-info-wrapper {
+    display: flex;
+    width: 100vw;
+    overflow-x: scroll;
+  }
+  .cpn--day-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 2rem;
+    width: calc(100vw / 5);
+    min-width: calc(100vw / 5);
+    padding: 2rem 0;
+    * {
+      font-size: 1.4rem;
+    }
+
+    .date-text {
+      font-size: 1.2rem;
+      color: var(--text-color-5);
+      transform: scale(0.8);
+      margin-bottom: 2rem;
+    }
+
+    .temp-trend-box {
+      height: 12rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .icon-weather {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .first-weather {
+      margin-top: 2rem;
+    }
+
+    .windy-power-wrapper {
+      margin-top: 1.6rem;
+    }
+
+    .icon-windy-power {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+  .yeaterday {
+    color: var(--text-color-5);
+  }
+}
