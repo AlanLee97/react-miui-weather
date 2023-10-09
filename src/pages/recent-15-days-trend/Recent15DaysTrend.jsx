@@ -2,10 +2,27 @@ import React, { useCallback, useState } from 'react';
 import { numberPaddingZero, getDateObjectValue } from '@alanlee97/utils';
 import './style.scss';
 
+const weekdayMap = {
+  0: '日',
+  1: '一',
+  2: '二',
+  3: '三',
+  4: '四',
+  5: '五',
+  6: '六'
+};
+
 function DayInfo(props = {}) {
   const { data = {} } = props || {};
+  const isCurDay = data.day === new Date().getDate();
+  const isYesterday = data.weekday === '昨天';
+  const className = window.$className([
+    'cpn--day-info',
+    isCurDay ? 'active' : '',
+    isYesterday ? 'past-style' : ''
+  ]);
   return (
-    <section className="cpn--day-info">
+    <section className={className}>
       <div>{data.weekday}</div>
       <div className='date-text'>{data.month}月{data.day}日</div>
       <div>
@@ -33,9 +50,9 @@ function DayInfo(props = {}) {
             <img className='icon-windy-power' src={data.windy.icon} />
           }
         </span>
-        <span>{data.windy.power}级</span>
+        <span className='power-text'>{data.windy.power}级</span>
       </div>
-      <div>{data.air}</div>
+      <div className={window.$className(['tag-air', data.air ? '' : 'tag-air-empty'])}>{data.air}</div>
     </section>
   );
 }
@@ -63,14 +80,16 @@ function getRecent15Days() {
 export default function Recent15DaysTrend(props = {}) {
   const { BasePage } = window.$components;
   console.log('getRecent15Days', getRecent15Days());
+  const date = getDateObjectValue(new Date());
+  console.log('date', date);
   const genDayList = useCallback(() => {
     const recent15Days = getRecent15Days();
     const list = [];
-    recent15Days.forEach(day => {
+    recent15Days.forEach((day, i) => {
       const date = new Date();
       const dateObj = getDateObjectValue(new Date(`${date.getFullYear()}/${day}`));
       list.push({
-        weekday: '昨天',
+        weekday: `周${weekdayMap[dateObj.weekday]}`,
         month: dateObj.month,
         day: dateObj.day,
         lastWeather: {
@@ -87,9 +106,12 @@ export default function Recent15DaysTrend(props = {}) {
           power: 1,
           icon: require('../../assets/imgs/icon/icon-direction-arrow.svg')
         },
-        air: ''
+        air: i > 0 ? '优' : ''
       });
     });
+    list[0].weekday = '昨天';
+    list[1].weekday = '今天';
+    list[2].weekday = '明天';
     return list;
   });
   const [data, setData] = useState({

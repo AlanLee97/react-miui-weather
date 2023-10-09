@@ -3,6 +3,13 @@
     display: flex;
     width: 100vw;
     overflow-x: scroll;
+    padding-bottom: 2rem;
+  }
+  .active {
+    background-color: #eeeeee66;
+  }
+  .past-style {
+    opacity: .4;
   }
   .cpn--day-info {
     display: flex;
@@ -43,11 +50,31 @@
 
     .windy-power-wrapper {
       margin-top: 1.6rem;
+
+      .power-text {
+        color: var(--text-color-5);
+      }
     }
 
     .icon-windy-power {
-      width: 1.6rem;
-      height: 1.6rem;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin-right: .2rem;
+    }
+    .tag-air {
+      width: 75%;
+      height: 2.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #5adda6;
+      background-color: #5adda610;
+      border-radius: 2.4rem;
+      margin: 0 auto;
+      margin-top: 2rem;
+    }
+    .tag-air-empty {
+      background-color: transparent;
     }
   }
   .yeaterday {
