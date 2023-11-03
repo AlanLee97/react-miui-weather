@@ -48,9 +48,8 @@
   },
   "dependencies": {
     "@alanlee97/utils": "0.0.10-dev.4",
-    "@antv/f-react": "^1.0.10",
-    "@antv/f2": "^4.0.48",
     "core-js": "^3.32.1",
+    "echarts": "^5.4.3",
     "eslint-config-alanlee": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
