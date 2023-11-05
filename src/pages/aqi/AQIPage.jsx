@@ -173,6 +173,7 @@ function create24Hour() {
 function GraphBar(props = {}) {
   const { visible = false } = props || {};
   const target = useRef(null);
+  const [data, setData] = useState(create24Hour());
   const create24HourValue = () => {
     const arr = [];
     for (let i = 0; i < 24; i++) {
@@ -182,12 +183,18 @@ function GraphBar(props = {}) {
   };
   useEffect(() => {
     // 基于准备好的dom，初始化echarts实例
-    const myChart = echarts.init(target.current, null, { renderer: 'svg', width: 1400 });
+    const myChart = echarts.init(target.current, null, { renderer: 'svg', width: data.length * 50 });
     // 绘制图表
     myChart.setOption({
+      grid: {
+        left: 0,
+        right: 0,
+        top: '20px',
+        bottom: '20px'
+      },
       tooltip: {},
       xAxis: {
-        data: create24Hour(),
+        data,
         axisTick: {
           show: false
         },
@@ -217,7 +224,7 @@ function GraphBar(props = {}) {
         }
       ]
     });
-  }, [target]);
+  }, [target, data]);
 
   const className = [
     'cpn--graph-bar',
@@ -251,6 +258,7 @@ function getRecent15Days() {
 function GraphLine(props = {}) {
   const { visible = false } = props || {};
   const target = useRef(null);
+  const [data, setData] = useState(getRecent15Days());
   const create15DayValue = () => {
     const arr = [];
     for (let i = 0; i < 15; i++) {
@@ -260,12 +268,22 @@ function GraphLine(props = {}) {
   };
   useEffect(() => {
     // 基于准备好的dom，初始化echarts实例
-    const myChart = echarts.init(target.current, null, { renderer: 'svg', width: 1400, height: 280 });
+    const myChart = echarts.init(target.current, null, {
+      renderer: 'svg',
+      width: data.length * 55,
+      height: 180
+    });
     // 绘制图表
     myChart.setOption({
+      grid: {
+        left: 0,
+        right: 0,
+        top: '20px',
+        bottom: '20px'
+      },
       tooltip: {},
       xAxis: {
-        data: getRecent15Days(),
+        data,
         axisTick: {
           show: false
         },
