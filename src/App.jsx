@@ -16,7 +16,7 @@ export function App (props = {}) {
   const onTouchEnd = (e) => {
     const { scrollPercent } = scrollInfo || {};
     const { moveY } = moveInfo || {};
-    if (scrollPercent > 15 && !isScrollingToBottom.current && moveY < 0) {
+    if (scrollPercent > 15 && !isScrollingToBottom.current && moveY < 0 && Math.abs(moveY) > 100) {
       isScrollingToBottom.current = true;
 
       scrollInfo.scrollToBottom();
