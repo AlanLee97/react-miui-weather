@@ -29,6 +29,13 @@ const devConfig = {
     open: true,
     hot: true
   }
+  // externals: {
+  //   react: {
+  //     commonjs: 'react',
+  //     amd: 'react',
+  //     root: 'React' // 指向全局变量
+  //   }
+  // }
 };
 
 module.exports = merge(baseConfig, devConfig);
