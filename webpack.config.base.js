@@ -14,7 +14,8 @@ module.exports = {
   output: {
     filename: 'js/[name].[fullhash:8].js',
     path: reslovePath('dist'),
-    clean: true
+    clean: true,
+    chunkFilename: '[name].bundle.js'
   },
   module: {
     rules: [
