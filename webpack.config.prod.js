@@ -23,6 +23,10 @@ const prodConfig = {
       }
     ]
   },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM'
+  },
   mode: 'production'
 };
 
