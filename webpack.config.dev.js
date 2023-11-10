@@ -28,6 +28,11 @@ const devConfig = {
     port: 3000,
     open: true,
     hot: true
+  },
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    echarts: 'echarts'
   }
 };
 

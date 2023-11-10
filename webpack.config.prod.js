@@ -24,6 +24,7 @@ const prodConfig = {
     ]
   },
   externals: {
+    echarts: 'echarts',
     react: 'React',
     'react-dom': 'ReactDOM'
   },
