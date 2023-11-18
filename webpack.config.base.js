@@ -1,7 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const reslovePath = (dir) => {
   return path.resolve(__dirname, dir);
@@ -12,9 +10,9 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
-    filename: 'js/[name].[fullhash:8].js',
+    filename: 'js/[name].js',
     path: reslovePath('dist'),
-    clean: true,
+    clean: true, // 清除dist文件夹，无需使用CleanWebpackPlugin插件
     chunkFilename: '[name].bundle.js'
   },
   module: {
@@ -24,32 +22,6 @@ module.exports = {
         use: [
           'babel-loader'
         ]
-      },
-      {
-        test: /.(css|scss)$/i,
-        use: [
-          'style-loader',
-          // MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /.(png|jpg|jpeg|webp|gif|svg)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'imgs/[name].[hash:8][ext]'
-        }
-        // webpack5中增加了rule.type: 'asset/resource'代替了file-loader,url-loader等，所以不用配置loader，不然会出现图片文件损坏
-        // use: [
-        //   {
-        //     loader: 'url-loader',
-        //     options: {
-        //       limit: 8 * 1024,
-        //       esModule: false
-        //     }
-        //   }
-        // ]
       }
     ]
   },
@@ -65,11 +37,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './index.html'
-    }),
-    // new MiniCssExtractPlugin({
-    //   filename: 'css/[name].[hash:8].css'
-    // }),
-    new CleanWebpackPlugin()
+    })
   ],
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    echarts: 'echarts'
+  },
   mode: 'development'
 };
