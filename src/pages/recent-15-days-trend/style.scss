@@ -37,6 +37,10 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      .chart-posi {
+        position: relative;
+        height: 100px;
+      }
     }
 
     .icon-weather {
@@ -79,5 +83,27 @@
   }
   .yeaterday {
     color: var(--text-color-5);
+  }
+
+  .line-chart-wrapper {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+}
+
+.cpn--line-chart {
+  width: 100%;
+  height: 100%;
+  .cpn--line-chart-container {
+    // overflow-x: scroll;
+    width: 100%;
+    height: 100%;
+
+    div:first-child{
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 }
