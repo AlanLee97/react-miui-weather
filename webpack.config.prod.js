@@ -2,6 +2,7 @@ const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = ({ analyze }) => {
   const prodConfig = {
@@ -34,10 +35,11 @@ module.exports = ({ analyze }) => {
       ]
     },
     plugins: [
+      analyze ? new BundleAnalyzerPlugin() : () => {},
       new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash:8].css'
       }),
-      analyze ? new BundleAnalyzerPlugin() : () => {}
+      new CompressionPlugin()
     ],
     mode: 'production'
   };
