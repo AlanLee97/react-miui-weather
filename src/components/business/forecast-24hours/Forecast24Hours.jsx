@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './style.scss';
 import { numberPaddingZero, getDateObjectValue } from '@alanlee97/utils';
+import './style.scss';
 
 // 引入 echarts 核心模块，核心模块提供了 echarts 使用必须要的接口。
 // import * as echarts from 'echarts/core';
@@ -92,15 +92,15 @@ function TrendChart(props = {}) {
     const myChart = echarts.init(target.current, null, {
       renderer: 'svg',
       width: data.length * 55,
-      height: 80
+      height: 90
     });
     // 绘制图表
     myChart.setOption({
       grid: {
         left: 10,
         right: 10,
-        top: 0,
-        bottom: 0
+        top: 40,
+        bottom: 2
       },
       tooltip: {
         show: false
@@ -115,11 +115,12 @@ function TrendChart(props = {}) {
         }
       },
       yAxis: {
-        inverse: true,
         type: 'value',
         splitLine: {
           show: false
-        }
+        },
+        min: 'dataMin',
+        max: 'dataMax'
       },
       series: [
         {
@@ -141,7 +142,7 @@ function TrendChart(props = {}) {
 
             show: true,
             formatter: ['{c}°'].join('\n'),
-            padding: 10,
+            padding: 6,
             fontSize: 18,
             color: '#fff'
           }
