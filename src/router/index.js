@@ -1,18 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { createHashRouter } from 'react-router-dom';
-// import {
-//   HomePage,
-//   AddCityPage,
-//   AQIPage,
-//   ForcastPage,
-//   Recent15DaysTrend,
-//   SettingPage
-// } from '../pages';
 import { App } from '../App';
-// import AddCityPage from '../pages/add-city/AddCityPage';
-// import HomePage from '../pages/home/HomePage';
-
-// const AddCityPage = lazy(() => import('../pages/add-city/AddCityPage'));
+import { Loading } from '../components';
 
 const routes = [
   {
@@ -44,7 +33,7 @@ const routes = [
 function genRoutes(routes) {
   return routes.map(route => {
     route.element = (
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<Loading />}>
         <App>
           {<route.element />}
         </App>

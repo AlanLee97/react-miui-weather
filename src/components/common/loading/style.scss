@@ -1,0 +1,25 @@
+.cpn--loading {
+  position: fixed;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: rgba($color: #ffffff, $alpha: .6);
+}
+
+.cpn--icon-loading {
+  animation: cycle 1.5s infinite linear;
+  @keyframes cycle {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
