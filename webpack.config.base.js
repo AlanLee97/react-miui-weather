@@ -44,5 +44,10 @@ module.exports = {
     'react-dom': 'ReactDOM',
     echarts: 'echarts'
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   mode: 'development'
 };

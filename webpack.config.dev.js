@@ -21,6 +21,9 @@ const devConfig = {
       }
     ]
   },
+  cache: {
+    type: 'filesystem'
+  },
   devtool: 'cheap-module-source-map',
   devServer: {
     port: 3000,
