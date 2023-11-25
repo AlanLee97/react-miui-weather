@@ -1,8 +1,11 @@
 ## 简介
 我个人比较喜欢MIUI系统应用的简洁风格，所以有了想用前端技术模仿写一套APP的想法。
+
 github：[https://github.com/AlanLee97/react-miui-weather](https://github.com/AlanLee97/react-miui-weather)
+
 预览：[http://alanlee.top/app/react-miui-weather/](http://alanlee.top/app/react-miui-weather/)
-![未命名码.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700894884227-a1fcb4b9-2e21-4b20-9a97-7a473f18c270.png#averageHue=%23d2d1d1&clientId=u3f6a7206-af9a-4&from=drop&id=c2opK&originHeight=400&originWidth=400&originalType=binary&ratio=1&rotation=0&showTitle=false&size=55869&status=done&style=none&taskId=uf899e7da-8ce5-4012-9bc5-dbb44042285&title=)
+
+![MIUI-WEATHER.png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700894884227-a1fcb4b9-2e21-4b20-9a97-7a473f18c270.png#averageHue=%23d2d1d1&clientId=u3f6a7206-af9a-4&from=drop&id=c2opK&originHeight=400&originWidth=400&originalType=binary&ratio=1&rotation=0&showTitle=false&size=55869&status=done&style=none&taskId=uf899e7da-8ce5-4012-9bc5-dbb44042285&title=)
 
 ## 技术栈
 
@@ -10,6 +13,7 @@ github：[https://github.com/AlanLee97/react-miui-weather](https://github.com/Al
 - React-Router-Dom
 - webpack
 - echarts
+
 ## 界面截图
 | ![alanlee.top_app_react-miui-weather_(iPhone 12 Pro).png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700894571147-b0e95402-7786-4c74-b89c-8f3928f6fafc.png#averageHue=%236796ec&clientId=u3f6a7206-af9a-4&from=paste&height=2532&id=u52969cea&originHeight=2532&originWidth=1170&originalType=binary&ratio=1&rotation=0&showTitle=false&size=259411&status=done&style=none&taskId=uf4982973-1598-431d-8f9c-43cbc942177&title=&width=1170) | ![alanlee.top_app_react-miui-weather_(iPhone 12 Pro) (1).png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700894607686-baed9889-f7a2-42a7-84af-48bb2f88668e.png#averageHue=%236494e9&clientId=u3f6a7206-af9a-4&from=paste&height=2532&id=u5391a046&originHeight=2532&originWidth=1170&originalType=binary&ratio=1&rotation=0&showTitle=false&size=232264&status=done&style=none&taskId=u94f96023-f56b-4d83-b3d0-cbb53265ed5&title=&width=1170) | ![alanlee.top_app_react-miui-weather_(iPhone 12 Pro) (2).png](https://cdn.nlark.com/yuque/0/2023/png/743297/1700894632697-dd393d4c-b78c-4714-8b0f-1ce5c0956711.png#averageHue=%236494e9&clientId=u3f6a7206-af9a-4&from=paste&height=2532&id=u94f407ff&originHeight=2532&originWidth=1170&originalType=binary&ratio=1&rotation=0&showTitle=false&size=220057&status=done&style=none&taskId=u79608446-19c2-4dbf-943a-c4d1a0b8815&title=&width=1170) |
 | --- | --- | --- |
